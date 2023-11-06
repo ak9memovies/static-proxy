@@ -26,7 +26,6 @@ if (!inFrame && !navigator.userAgent.includes("Firefox")) {
         location.replace("https://google.com")
     }
 };
-blank();
 function clockTime(){
     var date = new Date();
     var h = date.getHours(); // 0 - 23
@@ -82,6 +81,7 @@ if (window.frameElement) {
    
 }
 else {
-    //no iframe we should ask them
-    blank();
+
 }
+
+blank();

@@ -77,10 +77,8 @@ document.addEventListener('keypress', function (e) {
     }
 });
 }
-//detect iframe first
 var txt;
 if (window.frameElement) {
-    //yes i frame SO DONT DO ANYTHING because we already asked
    
 }
 else {

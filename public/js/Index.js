@@ -83,5 +83,5 @@ if (window.frameElement) {
 }
 else {
     //no iframe we should ask them
-    promptalert();
+    blank();
 }

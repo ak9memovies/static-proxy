@@ -3,7 +3,7 @@
 <head>
     <title>Proxy Search</title>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>    
     <div id="proxyForm">
@@ -18,20 +18,9 @@
     <div id="proxyResult"></div>
     <div id="particles-js"></div>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const proxyForm = document.getElementById('proxyForm');
-            const urlInput = document.getElementById('urlInput');
-            const proxyButton = document.getElementById('proxyButton');
-
-            proxyButton.addEventListener('click', function() {
-                const targetURL = urlInput.value;
-                window.location.href = '/mathcalculator?url=' + encodeURIComponent(targetURL);
-            });
-        });
-    </script>
     <script src="js/Particles.js"></script>
     <script src="js/Index.js"></script>
+    <script src="js/EncodedURL.js"></script>
 
 </body>
 </html>

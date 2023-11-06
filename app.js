@@ -62,6 +62,47 @@ app.get('/*', async (req, res) => {
     }
 });
 
+// Example of setting a cookie in a route
+app.get('/set-cookie', (req, res) => {
+    // Define the cookie details
+    const cookieDetails = {
+        key: 'myCookie',
+        value: 'example-cookie-value',
+        domain: 'example.com',
+        path: '/',
+        expires: new Date(Date.now() + 24 * 60 * 60 * 1000), // 24 hours
+        httpOnly: true,
+    };
+
+    // Create a Cookie object
+    const cookie = new tough.Cookie(cookieDetails);
+
+    // Set the cookie in the CookieJar
+    cookieJar.setCookie(cookie, 'https://example.com', (err) => {
+        if (err) {
+            console.error('Error setting cookie:', err);
+            res.status(500).send('Error setting the cookie.');
+        } else {
+            res.send('Cookie set successfully.');
+        }
+    });
+});
+
+// Example of getting cookies from the CookieJar
+app.get('/get-cookie', (req, res) => {
+    const url = 'https://example.com'; // URL where the cookie should be sent
+
+    // Get the cookies for the specified URL
+    cookieJar.getCookies(url, (err, cookies) => {
+        if (err) {
+            console.error('Error getting cookies:', err);
+            res.status(500).send('Error getting cookies.');
+        } else {
+            res.json(cookies);
+        }
+    });
+});
+
 app.listen(port, () => {
     console.log(`Proxy server is running on port ${port}`);
 });

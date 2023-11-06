@@ -9,13 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Fetch the proxied content, including the headers
         const response = await fetch(`/mathcalculator?url=${encodeURIComponent(targetURL)}`);
-        const contentTitle = response.headers.get('Content-Title');
-        const contentFavicon = response.headers.get('Content-Favicon');
-
-        // Set the title and favicon in your HTML
-        document.title = contentTitle;
-        const faviconLink = document.querySelector("link[rel*='icon']");
-        faviconLink.href = contentFavicon;
 
         // Handle the rest of your proxy logic and rendering
     });

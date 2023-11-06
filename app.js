@@ -18,7 +18,16 @@ app.get('/mathcalculator', async (req, res) => {
         return res.status(400).send('Please provide a target URL.');
     }
 
-     catch (error) {
+    const customUserAgent = 'MyCustomUserAgent/1.0'; // Replace with your custom User-Agent
+
+    try {
+        const response = await axios.get(targetURL, {
+            headers: {
+                'User-Agent': customUserAgent,
+            },
+        });
+        res.send(response.data);
+    } catch (error) {
         console.error(error);
         res.status(500).send('Error: Unable to fetch the requested URL.');
     }

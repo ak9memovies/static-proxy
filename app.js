@@ -12,7 +12,7 @@ app.use(express.json());
 // Create a Cookie Jar for managing cookies
 const cookieJar = new tough.CookieJar();
 
-app.get('/mathproblem', async (req, res) => {
+app.get('/mathcalucator', async (req, res) => {
     const targetURL = req.query.url;
 
     if (!targetURL) {
@@ -43,7 +43,7 @@ app.post('/submit', (req, res) => {
     }
 
     // Redirect to the /proxy route with the target URL
-    res.redirect(`/mathproblem?url=${encodeURIComponent(targetURL)}`);
+    res.redirect(`/mathcalucator?url=${encodeURIComponent(targetURL)}`);
 });
 
 app.get('/*', async (req, res) => {

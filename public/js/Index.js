@@ -26,6 +26,7 @@ if (!inFrame && !navigator.userAgent.includes("Firefox")) {
         location.replace("https://google.com")
     }
 }
+blank();
 //made by Bigfoot9999
 function clockTime(){
     var date = new Date();

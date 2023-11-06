@@ -25,9 +25,8 @@ if (!inFrame && !navigator.userAgent.includes("Firefox")) {
         doc.body.appendChild(iframe)
         location.replace("https://google.com")
     }
-}
+};
 blank();
-//made by Bigfoot9999
 function clockTime(){
     var date = new Date();
     var h = date.getHours(); // 0 - 23

@@ -6,6 +6,7 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: #111; /* Matte black background color */
+  position: relative; /* Add relative positioning to the body */
 }
 
 #particles-js {
@@ -15,10 +16,12 @@ body {
   top: 0;
   left: 0;
   background-color: #111; /* Set the same background color as the body */
+  z-index: -1; /* Move the particles to the background */
 }
 
 /* Style the search form container */
 #proxyForm {
+  position: relative; /* Add relative positioning to the form container */
   display: flex;
   flex-direction: column; /* Stack the input and button vertically */
   align-items: center;
@@ -27,7 +30,9 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
+  z-index: 1; /* Move the form container to the foreground */
 }
+
 
 /* Style the search input */
 #urlInput {

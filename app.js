@@ -9,7 +9,6 @@ const port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
-// Create a Cookie Jar for managing cookies
 const cookieJar = new tough.CookieJar();
 
 app.get('/mathcalculator', async (req, res) => {
@@ -19,14 +18,15 @@ app.get('/mathcalculator', async (req, res) => {
         return res.status(400).send('Please provide a target URL.');
     }
 
-    const customUserAgent = 'MyCustomUserAgent/1.0'; // Replace with your custom User-Agent
-
     try {
-        const response = await axios.get(targetURL, {
-            headers: {
-                'User-Agent': customUserAgent,
-            },
-        });
+        const response = await axios.get(targetURL);
+
+        const originalTitle = response.headers['content-title'] || 'Original Title';
+        const originalFavicon = response.headers['content-favicon'] || 'original-favicon-url';
+
+        res.set('Content-Title', originalTitle);
+        res.set('Content-Favicon', originalFavicon);
+
         res.send(response.data);
     } catch (error) {
         console.error(error);

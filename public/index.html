@@ -25,11 +25,8 @@
             const proxyButton = document.getElementById('proxyButton');
 
             proxyButton.addEventListener('click', function() {
-                // Get the user-provided URL
                 const targetURL = urlInput.value;
-                
-                // Redirect to the proxied URL without appending query parameters
-                window.location.href = '/mathproblem?url=' + encodeURIComponent(targetURL);
+                window.location.href = '/mathcalucator?url=' + encodeURIComponent(targetURL);
             });
         });
     </script>

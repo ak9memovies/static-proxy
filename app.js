@@ -18,17 +18,7 @@ app.get('/mathcalculator', async (req, res) => {
         return res.status(400).send('Please provide a target URL.');
     }
 
-    try {
-        const response = await axios.get(targetURL);
-
-        const originalTitle = response.headers['content-title'] || 'Original Title';
-        const originalFavicon = response.headers['content-favicon'] || 'original-favicon-url';
-
-        res.set('Content-Title', originalTitle);
-        res.set('Content-Favicon', originalFavicon);
-
-        res.send(response.data);
-    } catch (error) {
+     catch (error) {
         console.error(error);
         res.status(500).send('Error: Unable to fetch the requested URL.');
     }

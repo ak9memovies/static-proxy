@@ -1,0 +1,55 @@
+/* Center the search bar horizontally and vertically */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #111; /* Matte black background color */
+}
+
+/* Style the search form container */
+#proxyForm {
+  display: flex;
+  flex-direction: column; /* Stack the input and button vertically */
+  align-items: center;
+  background-color: #fff; /* White background color */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Style the search input */
+#searchContainer {
+  margin-bottom: 20px; /* Add spacing between the input and button */
+}
+
+#urlInput {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #3498db; /* Blue bottom border */
+  outline: none;
+  font-size: 16px;
+}
+
+/* Style the proxy button */
+#buttonContainer {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+}
+
+#proxyButton {
+  background-color: #3498db; /* Blue button background color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#proxyButton:hover {
+  background-color: #2779ab; /* Darker blue on hover */
+}

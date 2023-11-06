@@ -1,4 +1,4 @@
-/* Center the search bar horizontally and vertically */
+/* Center the search form horizontally and vertically */
 body {
   display: flex;
   justify-content: center;
@@ -21,10 +21,6 @@ body {
 }
 
 /* Style the search input */
-#searchContainer {
-  margin-bottom: 20px; /* Add spacing between the input and button */
-}
-
 #urlInput {
   width: 80%;
   padding: 10px;
@@ -32,14 +28,10 @@ body {
   border-bottom: 1px solid #3498db; /* Blue bottom border */
   outline: none;
   font-size: 16px;
+  margin-bottom: 10px; /* Add spacing between the input and button */
 }
 
 /* Style the proxy button */
-#buttonContainer {
-  display: flex;
-  justify-content: center; /* Center the button horizontally */
-}
-
 #proxyButton {
   background-color: #3498db; /* Blue button background color */
   color: #fff; /* White text color */

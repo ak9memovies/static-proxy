@@ -14,7 +14,9 @@ app.get('/mathcalculator', async (req, res) => {
     if (!targetURL) {
         return res.status(400).send('Please provide a target URL.');
     }
-    
+
+    try {
+        // Your code that might throw an error
     } catch (error) {
         console.error(error);
         res.status(500).send('Error: Unable to fetch the requested URL.');
